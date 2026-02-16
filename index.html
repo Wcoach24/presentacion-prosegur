@@ -137,6 +137,8 @@ h3{font-family:var(--font-heading);font-size:1.1rem;font-weight:600;margin-botto
 .portfolio-full{grid-column:1/-1}
 .retreat-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
 .retreat-gallery img{aspect-ratio:16/9}
+
+/* Main case: video + post */
 .portfolio-case{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);background:var(--bg-card);transition:all .3s var(--ease)}
 .portfolio-case:hover{border-color:var(--accent);box-shadow:var(--shadow-hover)}
 .portfolio-case .video-wrap{position:relative;overflow:hidden;background:#000;display:flex;align-items:center;justify-content:center}
@@ -152,8 +154,12 @@ h3{font-family:var(--font-heading);font-size:1.1rem;font-weight:600;margin-botto
 .post-panel .post-tags{font-size:11px;color:var(--prosegur-blue);line-height:1.6}
 .post-panel .post-label{font-family:var(--font-heading);font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px}
 @media(max-width:1024px){.portfolio-case{grid-template-columns:1fr}.post-panel{max-height:none}}
+
+/* Sound toggle */
 .sound-btn{position:absolute;bottom:12px;right:12px;z-index:10;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(0,0,0,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s var(--ease)}
 .sound-btn:hover{background:rgba(0,0,0,.8);border-color:var(--accent);transform:scale(1.1)}
+
+/* Video wrapper for relative positioning */
 .vid-wrap{position:relative;overflow:hidden}
 
 /* ═══════════════ SCRIPT PREVIEW ═══════════════ */
@@ -203,6 +209,7 @@ h3{font-family:var(--font-heading);font-size:1.1rem;font-weight:600;margin-botto
 .step-title{font-family:var(--font-heading);font-size:14px;font-weight:600;margin-bottom:6px}
 .step-desc{font-size:12.5px;color:var(--text-muted);line-height:1.55}
 .step-time{margin-top:10px;font-family:var(--font-heading);font-size:10px;font-weight:600;letter-spacing:1.5px;color:var(--accent)}
+
 .timeline-bar{display:flex;margin-top:40px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);height:72px}
 .timeline-segment{display:flex;flex-direction:column;justify-content:center;padding:0 18px;border-right:1px solid var(--border);transition:all .3s}
 .timeline-segment:last-child{border-right:none}
@@ -237,6 +244,7 @@ h3{font-family:var(--font-heading);font-size:1.1rem;font-weight:600;margin-botto
 .check-status{font-family:var(--font-heading);font-size:10px;font-weight:600;letter-spacing:1px;margin-top:4px}
 .status-done{color:var(--green-accent)}
 .status-pending{color:var(--prosegur-orange)}
+
 .checklist-footer{margin-top:28px;padding:24px;border-radius:var(--radius);background:var(--accent-soft);border:1px solid var(--accent-medium)}
 .checklist-footer p{font-size:13px;color:var(--text-secondary);line-height:1.65}
 .checklist-footer a{color:var(--accent);font-weight:600;text-decoration:none}
@@ -282,6 +290,7 @@ footer span{font-size:11px;color:var(--text-muted)}
 </head>
 <body>
 
+<!-- NAV -->
 <nav class="nav">
   <span class="nav-logo">AZM Studio</span>
   <span class="nav-sep">/</span>
@@ -290,18 +299,20 @@ footer span{font-size:11px;color:var(--text-muted)}
     <a href="#challenge">Contexto</a>
     <a href="#approach">Approach</a>
     <a href="#portfolio">Portfolio</a>
+    <a href="#directions">Dirección</a>
     <a href="#script">Guion</a>
-    <a href="#directions">Direcciones</a>
     <a href="#process">Proceso</a>
     <a href="#checklist">Checklist</a>
   </div>
 </nav>
 
+<!-- THEME -->
 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">
   <span class="ic-sun">☀️</span>
   <span class="ic-moon">🌙</span>
 </button>
 
+<!-- ═══════════════ HERO ═══════════════ -->
 <section id="hero">
   <div class="reveal">
     <div class="hero-badge">Propuesta Creativa — Febrero 2026</div>
@@ -314,33 +325,67 @@ footer span{font-size:11px;color:var(--text-muted)}
       Producción visual con claridad operativa y autoridad mediante sistemas generativos.
     </p>
     <div class="hero-meta">
-      <div class="hero-meta-item"><span class="hero-meta-label">Proyecto</span><span class="hero-meta-value">Convención interna · 12.000 empleados</span></div>
-      <div class="hero-meta-item"><span class="hero-meta-label">Pieza</span><span class="hero-meta-value">Vídeo 40s–1min · Seguridad Híbrida</span></div>
-      <div class="hero-meta-item"><span class="hero-meta-label">Entrega</span><span class="hero-meta-value">~10 días laborables</span></div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Proyecto</span>
+        <span class="hero-meta-value">Convención interna · 12.000 empleados</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Pieza</span>
+        <span class="hero-meta-value">Vídeo 40s–1min · Seguridad Híbrida</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Entrega</span>
+        <span class="hero-meta-value">~10 días laborables</span>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- ═══════════════ CHALLENGE ═══════════════ -->
 <section id="challenge">
   <div class="reveal">
     <span class="section-tag">El contexto</span>
     <h2>Seguridad Híbrida es ya<br>una realidad consolidada.</h2>
     <p class="subtitle">Personas, Tecnología y Datos integrados en un ecosistema operativo global.</p>
     <div class="stats-row">
-      <div class="stat-card"><div class="stat-number">14</div><div class="stat-label">iSOCs</div><div class="stat-desc">Centros de operaciones inteligentes desplegados globalmente</div></div>
-      <div class="stat-card"><div class="stat-number">1.200+</div><div class="stat-label">Profesionales</div><div class="stat-desc">Equipo especializado operando el modelo híbrido</div></div>
-      <div class="stat-card"><div class="stat-number">300K+</div><div class="stat-label">Dispositivos</div><div class="stat-desc">Conectados al ecosistema de seguridad en tiempo real</div></div>
-      <div class="stat-card"><div class="stat-number">40s</div><div class="stat-label">Duración</div><div class="stat-desc">Para transmitir autoridad y escala a 12.000 profesionales</div></div>
+      <div class="stat-card">
+        <div class="stat-number">14</div>
+        <div class="stat-label">iSOCs</div>
+        <div class="stat-desc">Centros de operaciones inteligentes desplegados globalmente</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">1.200+</div>
+        <div class="stat-label">Profesionales</div>
+        <div class="stat-desc">Equipo especializado operando el modelo híbrido</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">300K+</div>
+        <div class="stat-label">Dispositivos</div>
+        <div class="stat-desc">Conectados al ecosistema de seguridad en tiempo real</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">40s</div>
+        <div class="stat-label">Duración</div>
+        <div class="stat-desc">Para transmitir autoridad y escala a 12.000 profesionales</div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- ═══════════════ APPROACH ═══════════════ -->
 <section id="approach">
   <div class="reveal">
     <span class="section-tag">Quiénes somos</span>
     <h2>Clips audiovisuales.<br>Sin rodaje.</h2>
-    <p class="approach-text"><strong>AZM Studio</strong> produce piezas visuales de alto impacto mediante producción generativa. Operamos donde el timeline no permite rodaje tradicional: <strong>recreaciones cinematográficas de operaciones reales, iteración rápida, calidad broadcast</strong>.</p>
-    <p class="approach-text" style="margin-top:14px">La tecnología es el medio. La <strong>dirección creativa</strong> es lo que importa. Cada frame transmite lo que vuestra audiencia necesita sentir: escala, precisión, autoridad operativa.</p>
+    <p class="approach-text">
+      <strong>AZM Studio</strong> produce piezas visuales de alto impacto mediante producción generativa.
+      Operamos donde el timeline no permite rodaje tradicional:
+      <strong>recreaciones cinematográficas de operaciones reales, iteración rápida, calidad broadcast</strong>.
+    </p>
+    <p class="approach-text" style="margin-top:14px">
+      La tecnología es el medio. La <strong>dirección creativa</strong> es lo que importa.
+      Cada frame transmite lo que vuestra audiencia necesita sentir: escala, precisión, autoridad operativa.
+    </p>
     <div class="caps-row">
       <span class="cap-tag">Dirección creativa</span>
       <span class="cap-tag">Producción generativa</span>
@@ -352,38 +397,78 @@ footer span{font-size:11px;color:var(--text-muted)}
   </div>
 </section>
 
+<!-- ═══════════════ PORTFOLIO ═══════════════ -->
 <section id="portfolio">
   <div class="reveal">
     <span class="section-tag">Portfolio</span>
     <h2>Caso real:<br>Velorcios Group.</h2>
     <p class="subtitle">Campaña de concienciación en ciberseguridad. Vídeos pensados para transmitir que la protección debe acompañarnos estemos donde estemos. Localizaciones españolas reconocibles, enfoque humano, branding del cliente integrado en el entorno. Todo producido con sistemas generativos — sin rodaje.</p>
+
     <div class="portfolio-grid">
+
+      <!-- MAIN CASE: Metro + Post completo -->
       <div class="portfolio-case">
         <div class="video-wrap">
-          <video autoplay muted loop playsinline><source src="https://res.cloudinary.com/dd6onz7yk/video/upload/f_mp4,vc_h264/v1765556835/linkedin-previewer/9bcab949-32fb-491b-8888-29851cafce86/nmd9qixaekxw7lj3dxxr.mp4" type="video/mp4"></video>
+          <video autoplay muted loop playsinline>
+            <source src="https://res.cloudinary.com/dd6onz7yk/video/upload/f_mp4,vc_h264/v1765556835/linkedin-previewer/9bcab949-32fb-491b-8888-29851cafce86/nmd9qixaekxw7lj3dxxr.mp4" type="video/mp4">
+          </video>
           <button class="sound-btn" onclick="toggleSound(this)" title="Activar sonido"><span>🔇</span></button>
         </div>
         <div class="post-panel">
           <div class="post-label">Post que acompaña al vídeo</div>
-          <div class="post-header"><div class="post-avatar">V</div><div><div class="post-name">Velorcios Group</div><div class="post-subtitle">Contenido orgánico</div></div></div>
-          <div class="post-body">El phishing no entiende de localizaciones. <strong>Está en todas partes.</strong><br><br>Cada una de estas situaciones representa algo que vemos a diario en Velorcios Group: personas que reciben un mensaje aparentemente inocente justo cuando están cansadas, con prisa o simplemente distraídas.<br><br>Es en esos segundos donde los ataques funcionan. El atacante no necesita un motivo… <strong>solo un momento débil.</strong><br><br>Y por eso la concienciación no es un "extra": es la primera línea de defensa.<hr class="post-divider">🔒 <strong>Nuestro mensaje es claro:</strong><br>Protégete. Verifica antes de hacer clic. Y si dudas, no actúes.<br><br>En Velorcios Group trabajamos para que las organizaciones, sus empleados y sus clientes estén preparados ante un entorno donde la amenaza es continua, silenciosa y ubicua.<hr class="post-divider">🎥 Mira el vídeo aquí abajo y compártelos con tu equipo. Que nadie baje la guardia.</div>
+          <div class="post-header">
+            <div class="post-avatar">V</div>
+            <div>
+              <div class="post-name">Velorcios Group</div>
+              <div class="post-subtitle">Contenido orgánico</div>
+            </div>
+          </div>
+          <div class="post-body">
+            El phishing no entiende de localizaciones. <strong>Está en todas partes.</strong><br><br>
+            Cada una de estas situaciones representa algo que vemos a diario en Velorcios Group: personas que reciben un mensaje aparentemente inocente justo cuando están cansadas, con prisa o simplemente distraídas.<br><br>
+            Es en esos segundos donde los ataques funcionan. El atacante no necesita un motivo… <strong>solo un momento débil.</strong><br><br>
+            Y por eso la concienciación no es un "extra": es la primera línea de defensa.
+            <hr class="post-divider">
+            🔒 <strong>Nuestro mensaje es claro:</strong><br>
+            Protégete. Verifica antes de hacer clic. Y si dudas, no actúes.<br><br>
+            En Velorcios Group trabajamos para que las organizaciones, sus empleados y sus clientes estén preparados ante un entorno donde la amenaza es continua, silenciosa y ubicua.
+            <hr class="post-divider">
+            🎥 Mira el vídeo aquí abajo y compártelos con tu equipo. Que nadie baje la guardia.
+          </div>
           <div class="post-tags">#Seguridad #Ciberseguridad #Phishing #Concienciación #Velorcios #ProtecciónDigital #Awareness #SpainSecurity</div>
         </div>
       </div>
+
+      <!-- Remaining 2 videos -->
       <div class="portfolio-item">
         <div class="vid-wrap">
-          <video autoplay muted loop playsinline><source src="https://res.cloudinary.com/dd6onz7yk/video/upload/f_mp4,vc_h264/v1765548884/linkedin-previewer/9bcab949-32fb-491b-8888-29851cafce86/tdzq2z2fd5vjquf2neuu.mp4" type="video/mp4"></video>
+          <video autoplay muted loop playsinline>
+            <source src="https://res.cloudinary.com/dd6onz7yk/video/upload/f_mp4,vc_h264/v1765548884/linkedin-previewer/9bcab949-32fb-491b-8888-29851cafce86/tdzq2z2fd5vjquf2neuu.mp4" type="video/mp4">
+          </video>
           <button class="sound-btn" onclick="toggleSound(this)" title="Activar sonido"><span>🔇</span></button>
         </div>
-        <div class="portfolio-info"><div class="client-tag">Escena · Oficina corporativa</div><h3>Pretexto: "Acceso total"</h3><p>Entorno corporativo. El phishing llega al escritorio. Branding como parte del espacio de trabajo.</p></div>
+        <div class="portfolio-info">
+          <div class="client-tag">Escena · Oficina corporativa</div>
+          <h3>Pretexto: "Acceso total"</h3>
+          <p>Entorno corporativo. El phishing llega al escritorio. Branding como parte del espacio de trabajo.</p>
+        </div>
       </div>
+
       <div class="portfolio-item">
         <div class="vid-wrap">
-          <video autoplay muted loop playsinline><source src="https://res.cloudinary.com/dd6onz7yk/video/upload/f_mp4,vc_h264/v1765549315/linkedin-previewer/9bcab949-32fb-491b-8888-29851cafce86/yq885flhqzgexveymomy.mp4" type="video/mp4"></video>
+          <video autoplay muted loop playsinline>
+            <source src="https://res.cloudinary.com/dd6onz7yk/video/upload/f_mp4,vc_h264/v1765549315/linkedin-previewer/9bcab949-32fb-491b-8888-29851cafce86/yq885flhqzgexveymomy.mp4" type="video/mp4">
+          </video>
           <button class="sound-btn" onclick="toggleSound(this)" title="Activar sonido"><span>🔇</span></button>
         </div>
-        <div class="portfolio-info"><div class="client-tag">Escena · Estadio</div><h3>Pretexto: amenaza en espacio masivo</h3><p>Estadio con branding integrado en pantallas y entorno. Lo invisible en lo multitudinario.</p></div>
+        <div class="portfolio-info">
+          <div class="client-tag">Escena · Estadio</div>
+          <h3>Pretexto: amenaza en espacio masivo</h3>
+          <p>Estadio con branding integrado en pantallas y entorno. Lo invisible en lo multitudinario.</p>
+        </div>
       </div>
+
+      <!-- Campaign methodology banner -->
       <div class="portfolio-item portfolio-full" style="padding:28px 32px;display:flex;gap:24px;align-items:center">
         <div style="flex:1">
           <div class="client-tag" style="color:var(--accent)">Metodología de la campaña</div>
@@ -396,16 +481,20 @@ footer span{font-size:11px;color:var(--text-muted)}
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
+<!-- ═══════════════ RETREAT (compact) ═══════════════ -->
 <section id="retreat" style="min-height:auto;padding:40px 10% 40px">
   <div class="reveal">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;max-width:900px">
       <div class="portfolio-item" style="margin:0">
         <div class="vid-wrap">
-          <video autoplay muted loop playsinline style="width:100%;aspect-ratio:16/9;object-fit:cover"><source src="https://res.cloudinary.com/dd6onz7yk/video/upload/f_mp4,vc_h264/v1771266088/Retreatsite_63564BA3-219D-4C3D-9236-A2FCFC422540_zk4xa6.mov" type="video/mp4"></video>
+          <video autoplay muted loop playsinline style="width:100%;aspect-ratio:16/9;object-fit:cover">
+            <source src="https://res.cloudinary.com/dd6onz7yk/video/upload/f_mp4,vc_h264/v1771266088/Retreatsite_63564BA3-219D-4C3D-9236-A2FCFC422540_zk4xa6.mov" type="video/mp4">
+          </video>
           <button class="sound-btn" onclick="toggleSound(this)" title="Activar sonido"><span>🔇</span></button>
         </div>
       </div>
@@ -418,65 +507,194 @@ footer span{font-size:11px;color:var(--text-muted)}
   </div>
 </section>
 
-<section id="script">
-  <div class="reveal">
-    <span class="section-tag">Guion · Escena por escena</span>
-    <h2>El guion visualizado.</h2>
-    <p class="subtitle">Dos versiones del guion proporcionadas por Prosegur. Cada escena asociada a su referencia visual generada con IA.</p>
-    <div class="script-tabs">
-      <div class="script-tab active" onclick="switchScriptTab(0)">Opción 1 — "El modelo que lidera"</div>
-      <div class="script-tab" onclick="switchScriptTab(1)">Opción 2 — "No es una promesa"</div>
-    </div>
-    <div class="script-panel active" id="sp-0">
-      <div class="script-section">
-        <div class="scene-row"><div class="scene-img"><img src="escenas/op1_01.jpg" alt="Escena 01" onerror="this.parentElement.innerHTML='<div style=\'background:linear-gradient(135deg,#2C3E50,#1A1A1A);width:100%;height:100%;border-radius:8px\'></div>'"><div class="scene-num">01</div></div><div class="scene-text"><div class="script-visual">Infraestructuras críticas, ciudades, datos digitales superpuestos</div><div class="script-narration">"El mundo es más complejo."</div></div></div>
-        <div class="scene-row"><div class="scene-img"><img src="escenas/op1_02.jpg" alt="Escena 02" onerror="this.parentElement.innerHTML='<div style=\'background:linear-gradient(135deg,#1A1A1A,#637A7C);width:100%;height:100%;border-radius:8px\'></div>'"><div class="scene-num">02</div></div><div class="scene-text"><div class="script-visual">Complejidad creciente, riesgos híbridos</div><div class="script-narration">"Los riesgos son más rápidos. Más híbridos.<br>Y la seguridad no puede quedarse atrás."</div></div></div>
-        <div class="scene-row"><div class="scene-img"><img src="escenas/op1_03.jpg" alt="Escena 03" onerror="this.parentElement.innerHTML='<div style=\'background:linear-gradient(135deg,#FFD102,#2C3E50);width:100%;height:100%;border-radius:8px\'></div>'"><div class="scene-num">03</div></div><div class="scene-text"><div class="script-visual">IA analizando imágenes. Centro iSOC en plena actividad.</div><div class="script-narration">"Hoy la inteligencia artificial detecta patrones invisibles."</div></div></div>
-        <div class="scene-row"><div class="scene-img"><img src="escenas/op1_04.jpg" alt="Escena 04" onerror="this.parentElement.innerHTML='<div style=\'background:linear-gradient(135deg,#637A7C,#78CBCF);width:100%;height:100%;border-radius:8px\'></div>'"><div class="scene-num">04</div></div><div class="scene-text"><div class="script-visual">Drone despegando. Ampliación de capacidad de vigilancia.</div><div class="script-narration">"Los drones amplían nuestra capacidad de vigilancia."</div></div></div>
-        <div class="scene-row"><div class="scene-img"><img src="escenas/op1_05.jpg" alt="Escena 05" onerror="this.parentElement.innerHTML='<div style=\'background:linear-gradient(135deg,#78CBCF,#FFD102);width:100%;height:100%;border-radius:8px\'></div>'"><div class="scene-num">05</div></div><div class="scene-text"><div class="script-visual">Datos transformándose en decisiones en tiempo real.</div><div class="script-narration">"Los datos se transforman en decisiones en segundos."</div></div></div>
-        <div class="scene-row"><div class="scene-img"><img src="escenas/op1_06.jpg" alt="Escena 06" onerror="this.parentElement.innerHTML='<div style=\'background:linear-gradient(135deg,#0D1B2A,#FFD102);width:100%;height:100%;border-radius:8px\'></div>'"><div class="scene-num">06</div></div><div class="scene-text"><div class="script-visual">Vigilante en campo utilizando dispositivo. Transición fluida a iSOC.</div><div class="script-narration">"Con POPS, conectamos cada operación en tiempo real.<br>Del terreno al iSOC."</div></div></div>
-        <div class="scene-row"><div class="scene-img"><img src="escenas/op1_07.jpg" alt="Escena 07" onerror="this.parentElement.innerHTML='<div style=\'background:linear-gradient(135deg,#637A7C,#F2AA00);width:100%;height:100%;border-radius:8px\'></div>'"><div class="scene-num">07</div></div><div class="scene-text"><div class="script-visual">De la información a la anticipación.</div><div class="script-narration">"De la información… a la anticipación."</div></div></div>
-        <div class="scene-row"><div class="scene-img"><img src="escenas/op1_08.jpg" alt="Escena 08" onerror="this.parentElement.innerHTML='<div style=\'background:linear-gradient(135deg,#FFD102,#637A7C);width:100%;height:100%;border-radius:8px\'></div>'"><div class="scene-num">08</div></div><div class="scene-text"><div class="script-visual">Mapas globales iluminándose. Operaciones coordinadas.</div><div class="script-narration">"Unimos personas, tecnología y datos en un modelo único:<br><strong>la Seguridad Híbrida.</strong>"</div></div></div>
-        <div class="scene-row"><div class="scene-img"><img src="escenas/op1_09.jpg" alt="Escena 09" onerror="this.parentElement.innerHTML='<div style=\'background:linear-gradient(135deg,#F2AA00,#FFD102);width:100%;height:100%;border-radius:8px\'></div>'"><div class="scene-num">09</div></div><div class="scene-text"><div class="script-visual">Imágenes potentes de coordinación global.</div><div class="script-narration">"Así lideramos la transformación del sector a nivel global.<br>Así construimos la seguridad del futuro."</div></div></div>
-        <div class="scene-row"><div class="scene-img"><img src="escenas/op1_10.jpg" alt="Escena 10" onerror="this.parentElement.innerHTML='<div style=\'background:linear-gradient(135deg,#FFD102,#000);width:100%;height:100%;border-radius:8px\'></div>'"><div class="scene-num">10</div></div><div class="scene-text"><div class="script-visual">Cierre — Logo Prosegur, claim final.</div><div class="script-narration">"<strong>Seguridad Híbrida.<br>El modelo que protege el mundo.</strong>"</div></div></div>
-      </div>
-    </div>
-    <div class="script-panel" id="sp-1">
-      <div class="script-section">
-        <div class="script-block"><div class="script-time">0–6"</div><div class="script-visual">Infraestructuras, ciudades, movimiento, datos sutiles.</div><div class="script-narration">"Vivimos en un entorno híbrido. Donde lo físico y lo digital se entrelazan. Donde los riesgos evolucionan cada segundo."</div><span class="script-cartela">UN ENTORNO HÍBRIDO</span></div>
-        <div class="script-block"><div class="script-time">6–13"</div><div class="script-visual">Operación real + transición a tecnología.</div><div class="script-narration">"Hace años dimos un paso decisivo. Creamos un modelo diferente. Hoy, ese modelo está <strong>consolidado</strong>."</div><span class="script-cartela">MODELO CONSOLIDADO</span></div>
-        <div class="script-block"><div class="script-time">13–23"</div><div class="script-visual">IA + Drones + POPS integrados en narrativa.</div><div class="script-narration">"La inteligencia artificial detecta patrones invisibles. Los drones amplían nuestra capacidad. Y POPS conecta cada operación en tiempo real."</div><span class="script-cartela">INTELIGENCIA EN TIEMPO REAL</span></div>
-        <div class="script-block"><div class="script-time">23–33"</div><div class="script-visual">Escala global, ecosistema operativo. "No es una promesa."</div><div class="script-narration">"La Seguridad Híbrida integra personas, tecnología y datos en un único ecosistema. <strong>No es una promesa.</strong> Es el modelo en el que ya confían miles de organizaciones. Desplegado, probado y escalable."</div><span class="script-cartela">GLOBAL. PROBADO. ESCALABLE.</span></div>
-        <div class="script-block"><div class="script-time">33–40"</div><div class="script-visual">Crescendo final — convergencia, autoridad.</div><div class="script-narration">"El modelo que protege. El modelo que anticipa. <strong>El modelo que lidera.</strong>"</div><span class="script-cartela">SEGURIDAD HÍBRIDA — PROSEGUR SECURITY</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- ═══════════════ DIRECCIÓN CREATIVA ═══════════════ -->
 <section id="directions">
   <div class="reveal">
-    <span class="section-tag">Tratamientos visuales</span>
-    <h2>Tres estilos de referencias visuales</h2>
-    <p class="subtitle">Mismo guion, tres direcciones visuales. Cada una con storyboard, referencias y muestra generada con IA.</p>
-    <div class="directions-grid">
-      <div class="direction-card" style="border-color:var(--accent)"><div class="direction-letter">⭐ RECOMENDADO</div><h3>Escudo Invisible</h3><p class="desc">La seguridad como capa operativa que ya funciona — solo hay que revelarla. Espacios reales donde se descubre la malla de protección: datos, profesionales, tecnología trabajando con precisión y calma. Autoridad sin épica exagerada.</p><div class="direction-keywords"><span>Serenidad</span><span>Precisión</span><span>Revelación</span><span>Control</span></div><div class="direction-fit"><strong>CEO-proof:</strong> Sofisticación, calma, "lo invisible ya está protegiendo". El más alineado con el discurso de dirección.</div></div>
-      <div class="direction-card"><div class="direction-letter">TRATAMIENTO B</div><h3>Sistema Conectado</h3><p class="desc">El modelo como ecosistema operativo conectado. Flujos de datos coordinados, iSOC como centro de operaciones, señal → detección → respuesta en tiempo real. Visualización limpia de la cadena causal que Prosegur ya opera.</p><div class="direction-keywords"><span>Conectividad</span><span>Operaciones</span><span>Tiempo real</span><span>Coordinación</span></div><div class="direction-fit"><strong>Encaja con:</strong> "Del terreno al iSOC, de los datos a la anticipación" — cadena causal visible.</div></div>
-      <div class="direction-card"><div class="direction-letter">TRATAMIENTO C</div><h3>Evolución</h3><p class="desc">De la seguridad tradicional al modelo híbrido. Transformación visual que muestra el camino recorrido: de presencia y reacción a anticipación e inteligencia. "No es una promesa — es el modelo en el que ya confían miles de organizaciones."</p><div class="direction-keywords"><span>Realidad hoy</span><span>Probado</span><span>Transformación</span><span>Escala</span></div><div class="direction-fit"><strong>Encaja con:</strong> "Hace años dimos un paso decisivo" — el arco más narrativo. Ideal para 12.000 empleados que han vivido la transformación.</div></div>
+    <span class="section-tag">Dirección creativa</span>
+    <h2>Escudo Invisible.</h2>
+    <p class="subtitle">La seguridad como capa operativa que ya funciona — solo hay que revelarla. Un tratamiento visual que combina elegancia, precisión y revelación progresiva.</p>
+    <div class="directions-grid" style="grid-template-columns:1fr;max-width:640px">
+      <div class="direction-card" style="border-color:var(--accent)"><div class="direction-letter">⭐ DIRECCIÓN CREATIVA</div><h3>Escudo Invisible</h3><p class="desc">Espacios reales donde se descubre progresivamente la malla de protección que Prosegur despliega: datos, profesionales, tecnología trabajando con precisión y calma. Sin alarma, sin drama — sofisticación pura. La cámara revela lo que siempre estuvo ahí.</p><div class="direction-keywords"><span>Serenidad</span><span>Precisión</span><span>Revelación</span><span>Control</span><span>Calma</span><span>Autoridad</span></div><div class="direction-fit"><strong>CEO-proof:</strong> Sofisticación, calma, "lo invisible ya está protegiendo". Alineado con el discurso de dirección.</div></div>
     </div>
     <a href="moodboards.html" class="moodboards-link">Ver storyboards, referencias y muestras →</a>
   </div>
 </section>
 
+<!-- ═══════════════ GUION ═══════════════ -->
+<section id="script">
+  <div class="reveal">
+    <span class="section-tag">Guion · Escena por escena</span>
+    <h2>El guion visualizado.</h2>
+    <p class="subtitle">Dos versiones del guion proporcionadas por Prosegur. Cada escena asociada a su referencia visual generada con IA.</p>
+
+    <div class="script-tabs">
+      <div class="script-tab active" onclick="switchScriptTab(0)">Opción 1 — "El modelo que lidera"</div>
+      <div class="script-tab" onclick="switchScriptTab(1)">Opción 2 — "No es una promesa"</div>
+    </div>
+
+    <!-- OPCIÓN 1 -->
+    <div class="script-panel active" id="sp-0">
+      <div class="script-section">
+
+        <div class="scene-row">
+          <div class="scene-img"><img src="escenas/op1_01.jpg" alt="Escena 01" onerror="this.parentElement.innerHTML='<div class=\'gradient-bg\' style=\'background:linear-gradient(135deg,#2C3E50,#1A1A1A);width:100%;height:100%;border-radius:8px\'></div>'"><div class="scene-num">01</div></div>
+          <div class="scene-text">
+            <div class="script-visual">Infraestructuras críticas, ciudades, datos digitales superpuestos</div>
+            <div class="script-narration">"El mundo es más complejo."</div>
+          </div>
+        </div>
+
+        <div class="scene-row">
+          <div class="scene-img"><img src="escenas/op1_02.jpg" alt="Escena 02" onerror="this.parentElement.innerHTML='<div class=\'gradient-bg\' style=\'background:linear-gradient(135deg,#1A1A1A,#637A7C);width:100%;height:100%;border-radius:8px\'></div>'"><div class="scene-num">02</div></div>
+          <div class="scene-text">
+            <div class="script-visual">Complejidad creciente, riesgos híbridos</div>
+            <div class="script-narration">"Los riesgos son más rápidos. Más híbridos.<br>Y la seguridad no puede quedarse atrás."</div>
+          </div>
+        </div>
+
+        <div class="scene-row">
+          <div class="scene-img"><img src="escenas/op1_03.jpg" alt="Escena 03" onerror="this.parentElement.innerHTML='<div class=\'gradient-bg\' style=\'background:linear-gradient(135deg,#FFD102,#2C3E50);width:100%;height:100%;border-radius:8px\'></div>'"><div class="scene-num">03</div></div>
+          <div class="scene-text">
+            <div class="script-visual">IA analizando imágenes. Centro iSOC en plena actividad.</div>
+            <div class="script-narration">"Hoy la inteligencia artificial detecta patrones invisibles."</div>
+          </div>
+        </div>
+
+        <div class="scene-row">
+          <div class="scene-img"><img src="escenas/op1_04.jpg" alt="Escena 04" onerror="this.parentElement.innerHTML='<div class=\'gradient-bg\' style=\'background:linear-gradient(135deg,#637A7C,#78CBCF);width:100%;height:100%;border-radius:8px\'></div>'"><div class="scene-num">04</div></div>
+          <div class="scene-text">
+            <div class="script-visual">Drone despegando. Ampliación de capacidad de vigilancia.</div>
+            <div class="script-narration">"Los drones amplían nuestra capacidad de vigilancia."</div>
+          </div>
+        </div>
+
+        <div class="scene-row">
+          <div class="scene-img"><img src="escenas/op1_05.jpg" alt="Escena 05" onerror="this.parentElement.innerHTML='<div class=\'gradient-bg\' style=\'background:linear-gradient(135deg,#78CBCF,#FFD102);width:100%;height:100%;border-radius:8px\'></div>'"><div class="scene-num">05</div></div>
+          <div class="scene-text">
+            <div class="script-visual">Datos transformándose en decisiones en tiempo real.</div>
+            <div class="script-narration">"Los datos se transforman en decisiones en segundos."</div>
+          </div>
+        </div>
+
+        <div class="scene-row">
+          <div class="scene-img"><img src="escenas/op1_06.jpg" alt="Escena 06" onerror="this.parentElement.innerHTML='<div class=\'gradient-bg\' style=\'background:linear-gradient(135deg,#0D1B2A,#FFD102);width:100%;height:100%;border-radius:8px\'></div>'"><div class="scene-num">06</div></div>
+          <div class="scene-text">
+            <div class="script-visual">Vigilante en campo utilizando dispositivo. Transición fluida a iSOC.</div>
+            <div class="script-narration">"Con POPS, conectamos cada operación en tiempo real.<br>Del terreno al iSOC."</div>
+          </div>
+        </div>
+
+        <div class="scene-row">
+          <div class="scene-img"><img src="escenas/op1_07.jpg" alt="Escena 07" onerror="this.parentElement.innerHTML='<div class=\'gradient-bg\' style=\'background:linear-gradient(135deg,#637A7C,#F2AA00);width:100%;height:100%;border-radius:8px\'></div>'"><div class="scene-num">07</div></div>
+          <div class="scene-text">
+            <div class="script-visual">De la información a la anticipación.</div>
+            <div class="script-narration">"De la información… a la anticipación."</div>
+          </div>
+        </div>
+
+        <div class="scene-row">
+          <div class="scene-img"><img src="escenas/op1_08.jpg" alt="Escena 08" onerror="this.parentElement.innerHTML='<div class=\'gradient-bg\' style=\'background:linear-gradient(135deg,#FFD102,#637A7C);width:100%;height:100%;border-radius:8px\'></div>'"><div class="scene-num">08</div></div>
+          <div class="scene-text">
+            <div class="script-visual">Mapas globales iluminándose. Operaciones coordinadas.</div>
+            <div class="script-narration">"Unimos personas, tecnología y datos en un modelo único:<br><strong>la Seguridad Híbrida.</strong>"</div>
+          </div>
+        </div>
+
+        <div class="scene-row">
+          <div class="scene-img"><img src="escenas/op1_09.jpg" alt="Escena 09" onerror="this.parentElement.innerHTML='<div class=\'gradient-bg\' style=\'background:linear-gradient(135deg,#F2AA00,#FFD102);width:100%;height:100%;border-radius:8px\'></div>'"><div class="scene-num">09</div></div>
+          <div class="scene-text">
+            <div class="script-visual">Imágenes potentes de coordinación global.</div>
+            <div class="script-narration">"Así lideramos la transformación del sector a nivel global.<br>Así construimos la seguridad del futuro."</div>
+          </div>
+        </div>
+
+        <div class="scene-row">
+          <div class="scene-img"><img src="escenas/op1_10.jpg" alt="Escena 10" onerror="this.parentElement.innerHTML='<div class=\'gradient-bg\' style=\'background:linear-gradient(135deg,#FFD102,#000);width:100%;height:100%;border-radius:8px\'></div>'"><div class="scene-num">10</div></div>
+          <div class="scene-text">
+            <div class="script-visual">Cierre — Logo Prosegur, claim final.</div>
+            <div class="script-narration">"<strong>Seguridad Híbrida.<br>El modelo que protege el mundo.</strong>"</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- OPCIÓN 2 -->
+    <div class="script-panel" id="sp-1">
+      <div class="script-section">
+
+        <div class="script-block">
+          <div class="script-time">0–6"</div>
+          <div class="script-visual">Infraestructuras, ciudades, movimiento, datos sutiles.</div>
+          <div class="script-narration">"Vivimos en un entorno híbrido. Donde lo físico y lo digital se entrelazan. Donde los riesgos evolucionan cada segundo."</div>
+          <span class="script-cartela">UN ENTORNO HÍBRIDO</span>
+        </div>
+
+        <div class="script-block">
+          <div class="script-time">6–13"</div>
+          <div class="script-visual">Operación real + transición a tecnología.</div>
+          <div class="script-narration">"Hace años dimos un paso decisivo. Creamos un modelo diferente. Hoy, ese modelo está <strong>consolidado</strong>."</div>
+          <span class="script-cartela">MODELO CONSOLIDADO</span>
+        </div>
+
+        <div class="script-block">
+          <div class="script-time">13–23"</div>
+          <div class="script-visual">IA + Drones + POPS integrados en narrativa.</div>
+          <div class="script-narration">"La inteligencia artificial detecta patrones invisibles. Los drones amplían nuestra capacidad. Y POPS conecta cada operación en tiempo real."</div>
+          <span class="script-cartela">INTELIGENCIA EN TIEMPO REAL</span>
+        </div>
+
+        <div class="script-block">
+          <div class="script-time">23–33"</div>
+          <div class="script-visual">Escala global, ecosistema operativo. "No es una promesa."</div>
+          <div class="script-narration">"La Seguridad Híbrida integra personas, tecnología y datos en un único ecosistema. <strong>No es una promesa.</strong> Es el modelo en el que ya confían miles de organizaciones. Desplegado, probado y escalable."</div>
+          <span class="script-cartela">GLOBAL. PROBADO. ESCALABLE.</span>
+        </div>
+
+        <div class="script-block">
+          <div class="script-time">33–40"</div>
+          <div class="script-visual">Crescendo final — convergencia, autoridad.</div>
+          <div class="script-narration">"El modelo que protege. El modelo que anticipa. <strong>El modelo que lidera.</strong>"</div>
+          <span class="script-cartela">SEGURIDAD HÍBRIDA — PROSEGUR SECURITY</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════ PROCESS ═══════════════ -->
 <section id="process">
   <div class="reveal">
     <span class="section-tag">Proceso</span>
     <h2>Método claro.<br>Validación en cada paso.</h2>
     <p class="subtitle">Nada avanza sin vuestra aprobación. Cada fase tiene un checkpoint.</p>
     <div class="process-steps">
-      <div class="process-step"><div class="step-number">01</div><div class="step-title">Briefing cerrado</div><div class="step-desc">Alineamos guion final, tratamiento visual y entregables.</div><div class="step-time">Día 0</div></div>
-      <div class="process-step"><div class="step-number">02</div><div class="step-title">Dirección creativa</div><div class="step-desc">Frames clave de cada escena del guion para validación.</div><div class="step-time">Días 1–2</div></div>
-      <div class="process-step"><div class="step-number">03</div><div class="step-title">Producción</div><div class="step-desc">Generación, composición, motion. Las 5 escenas del vídeo.</div><div class="step-time">Días 3–7</div></div>
-      <div class="process-step"><div class="step-number">04</div><div class="step-title">Revisión y entrega</div><div class="step-desc">Ajustes finales, render, entrega en formato definitivo.</div><div class="step-time">Días 8–10</div></div>
+      <div class="process-step">
+        <div class="step-number">01</div>
+        <div class="step-title">Briefing cerrado</div>
+        <div class="step-desc">Alineamos guion final, tratamiento visual y entregables.</div>
+        <div class="step-time">Día 0</div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">02</div>
+        <div class="step-title">Dirección creativa</div>
+        <div class="step-desc">Frames clave de cada escena del guion para validación.</div>
+        <div class="step-time">Días 1–2</div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">03</div>
+        <div class="step-title">Producción</div>
+        <div class="step-desc">Generación, composición, motion. Las 5 escenas del vídeo.</div>
+        <div class="step-time">Días 3–7</div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">04</div>
+        <div class="step-title">Revisión y entrega</div>
+        <div class="step-desc">Ajustes finales, render, entrega en formato definitivo.</div>
+        <div class="step-time">Días 8–10</div>
+      </div>
     </div>
     <div class="timeline-bar">
       <div class="timeline-segment seg-briefing"><span class="t-label">Briefing</span><span class="t-days">Día 0</span></div>
@@ -490,27 +708,90 @@ footer span{font-size:11px;color:var(--text-muted)}
   </div>
 </section>
 
+<!-- ═══════════════ CHECKLIST ═══════════════ -->
 <section id="checklist">
   <div class="reveal">
     <span class="section-tag">Lo que necesitamos</span>
     <h2>Checklist para arrancar.</h2>
     <p class="subtitle">Estado actualizado de los materiales necesarios para preparar la propuesta formal.</p>
     <div class="checklist-container">
-      <div class="checklist-item provided" data-key="guion"><div class="check-box"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="check-content"><div class="check-label">Guion / estructura del vídeo</div><div class="check-desc">Dos versiones recibidas — "El modelo que lidera". Pendiente validar cuál es la definitiva.</div><div class="check-status status-done">✓ RECIBIDO</div></div></div>
-      <div class="checklist-item provided" data-key="brand"><div class="check-box"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="check-content"><div class="check-label">Brand guidelines / Identidad visual</div><div class="check-desc">Manual de marca v6.0 recibido. Paleta, tipografía y uso de logo documentados.</div><div class="check-status status-done">✓ RECIBIDO</div></div></div>
-      <div class="checklist-item provided" data-key="duracion"><div class="check-box"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="check-content"><div class="check-label">Duración estimada</div><div class="check-desc">Confirmado: 40 segundos — 1 minuto.</div><div class="check-status status-done">✓ CONFIRMADO</div></div></div>
-      <div class="checklist-item" onclick="toggleCheck(this)" data-key="deadline"><div class="check-box"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="check-content"><div class="check-label">Deadline de entrega</div><div class="check-desc">Fecha exacta de la convención para planificar entregas.</div><div class="check-status status-pending">⏳ PENDIENTE</div></div></div>
-      <div class="checklist-item" onclick="toggleCheck(this)" data-key="formato"><div class="check-box"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="check-content"><div class="check-label">Formato de proyección</div><div class="check-desc">Pendiente confirmación: dimensiones pantalla LED vs 16:9 estándar.</div><div class="check-status status-pending">⏳ PENDIENTE — Confirma agencia evento</div></div></div>
-      <div class="checklist-item" onclick="toggleCheck(this)" data-key="direccion"><div class="check-box"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="check-content"><div class="check-label">Tratamiento visual preferido</div><div class="check-desc">Elegir entre tratamiento A (Sistema Vivo), B (Escudo Invisible) o C (Evolución).</div><div class="check-status status-pending">⏳ A DECIDIR EN REUNIÓN</div></div></div>
-      <div class="checklist-item" onclick="toggleCheck(this)" data-key="guion-final"><div class="check-box"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="check-content"><div class="check-label">Guion definitivo validado por dirección</div><div class="check-desc">Confirmar versión final (Opción 1 o 2) y aprobación de dirección.</div><div class="check-status status-pending">⏳ PENDIENTE VALIDACIÓN DIRECCIÓN</div></div></div>
+
+      <div class="checklist-item provided" data-key="guion">
+        <div class="check-box"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="check-content">
+          <div class="check-label">Guion / estructura del vídeo</div>
+          <div class="check-desc">Dos versiones recibidas — "El modelo que lidera". Pendiente validar cuál es la definitiva.</div>
+          <div class="check-status status-done">✓ RECIBIDO</div>
+        </div>
+      </div>
+
+      <div class="checklist-item provided" data-key="brand">
+        <div class="check-box"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="check-content">
+          <div class="check-label">Brand guidelines / Identidad visual</div>
+          <div class="check-desc">Manual de marca v6.0 recibido. Paleta, tipografía y uso de logo documentados.</div>
+          <div class="check-status status-done">✓ RECIBIDO</div>
+        </div>
+      </div>
+
+      <div class="checklist-item provided" data-key="duracion">
+        <div class="check-box"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="check-content">
+          <div class="check-label">Duración estimada</div>
+          <div class="check-desc">Confirmado: 40 segundos — 1 minuto.</div>
+          <div class="check-status status-done">✓ CONFIRMADO</div>
+        </div>
+      </div>
+
+      <div class="checklist-item" onclick="toggleCheck(this)" data-key="deadline">
+        <div class="check-box"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="check-content">
+          <div class="check-label">Deadline de entrega</div>
+          <div class="check-desc">Fecha exacta de la convención para planificar entregas.</div>
+          <div class="check-status status-pending">⏳ PENDIENTE</div>
+        </div>
+      </div>
+
+      <div class="checklist-item" onclick="toggleCheck(this)" data-key="formato">
+        <div class="check-box"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="check-content">
+          <div class="check-label">Formato de proyección</div>
+          <div class="check-desc">Pendiente confirmación: dimensiones pantalla LED vs 16:9 estándar.</div>
+          <div class="check-status status-pending">⏳ PENDIENTE — Confirma agencia evento</div>
+        </div>
+      </div>
+
+      <div class="checklist-item provided" data-key="direccion">
+        <div class="check-box"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="check-content">
+          <div class="check-label">Tratamiento visual</div>
+          <div class="check-desc">Dirección creativa definida: Escudo Invisible.</div>
+          <div class="check-status status-done">✓ DEFINIDO</div>
+        </div>
+      </div>
+
+      <div class="checklist-item" onclick="toggleCheck(this)" data-key="guion-final">
+        <div class="check-box"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="check-content">
+          <div class="check-label">Guion definitivo validado por dirección</div>
+          <div class="check-desc">Confirmar versión final (Opción 1 o 2) y aprobación de dirección.</div>
+          <div class="check-status status-pending">⏳ PENDIENTE VALIDACIÓN DIRECCIÓN</div>
+        </div>
+      </div>
+
     </div>
+
     <div class="checklist-footer">
       <p>Materiales pendientes y confirmaciones a <a href="mailto:alvaro@studioazm.com">alvaro@studioazm.com</a></p>
-      <a href="mailto:alvaro@studioazm.com?subject=Materiales%20Prosegur%20%C3%97%20AZM%20Studio&body=Hola%20%C3%81lvaro%2C%0A%0AMateriales%20pendientes%3A%0A%0A-%20Deadline%20exacto%3A%0A-%20Formato%20proyecci%C3%B3n%20(confirmaci%C3%B3n%20agencia)%3A%0A-%20Tratamiento%20visual%20elegido%20(A%2FB%2FC)%3A%0A-%20Gui%C3%B3n%20definitivo%20validado%3A%0A%0AGracias!" class="email-cta">✉ Enviar materiales pendientes</a>
+      <a href="mailto:alvaro@studioazm.com?subject=Materiales%20Prosegur%20%C3%97%20AZM%20Studio&body=Hola%20%C3%81lvaro%2C%0A%0AMateriales%20pendientes%3A%0A%0A-%20Deadline%20exacto%3A%0A-%20Formato%20proyecci%C3%B3n%20(confirmaci%C3%B3n%20agencia)%3A%0A-%20Tratamiento%20visual%3A%20Escudo%20Invisible%20(confirmado)%0A-%20Gui%C3%B3n%20definitivo%20validado%3A%0A%0AGracias!" class="email-cta">
+        ✉ Enviar materiales pendientes
+      </a>
     </div>
   </div>
 </section>
 
+
+<!-- ═══════════════ CONTACT ═══════════════ -->
 <section id="contact">
   <div class="reveal">
     <span class="section-tag">Siguiente paso</span>
@@ -540,18 +821,22 @@ function toggleTheme(){
   try{localStorage.setItem('azm-theme',n)}catch(e){}
 }
 try{const s=localStorage.getItem('azm-theme');if(s)document.documentElement.setAttribute('data-theme',s)}catch(e){}
+
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
 },{threshold:0.08});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
 function switchScriptTab(i){
   document.querySelectorAll('.script-tab').forEach((t,j)=>t.classList.toggle('active',j===i));
   document.querySelectorAll('.script-panel').forEach((p,j)=>p.classList.toggle('active',j===i));
 }
+
 function toggleSound(btn){
   const wrap=btn.closest('.video-wrap')||btn.closest('.vid-wrap');
   const vid=wrap.querySelector('video');
   if(vid.muted){
+    // Mute all other videos first
     document.querySelectorAll('video').forEach(v=>{v.muted=true});
     document.querySelectorAll('.sound-btn span').forEach(s=>{s.textContent='🔇'});
     vid.muted=false;
@@ -561,6 +846,7 @@ function toggleSound(btn){
     btn.querySelector('span').textContent='🔇';
   }
 }
+
 function toggleCheck(item){
   if(item.classList.contains('provided'))return;
   item.classList.toggle('checked');
