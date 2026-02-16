@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prosegur — Tratamientos Visuales</title>
+<title>Prosegur — Escudo Invisible · Tratamiento Visual</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{--font-h:'Poppins',sans-serif;--font-b:'Open Sans',sans-serif;--ease:cubic-bezier(.4,0,.2,1);--r:12px;--yellow:#FFD102;--teal:#637A7C;--blue:#78CBCF;--orange:#F3813C;--gray:#9D9FA2;--gold:#F2AA00}
@@ -22,12 +22,6 @@ h2{font-family:var(--font-h);font-size:1.8rem;font-weight:600;letter-spacing:-.0
 .tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-h);font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
 .tag::before{content:'';width:24px;height:1px;background:var(--accent)}
 .subtitle{font-size:1.05rem;color:var(--text2);max-width:620px;line-height:1.75;margin-bottom:48px}
-.tabs{display:flex;gap:0;margin-bottom:48px;border-bottom:1px solid var(--border)}
-.tab{font-family:var(--font-h);font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:14px 28px;cursor:pointer;color:var(--text3);border-bottom:2px solid transparent;transition:all .3s}
-.tab:hover{color:var(--text2)}
-.tab.active{color:var(--accent);border-bottom-color:var(--accent)}
-.panel{display:none}
-.panel.active{display:block}
 .dir-header{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:48px;padding:40px;border-radius:var(--r);border:1px solid var(--border);background:var(--card)}
 .dir-header h2{margin-bottom:8px}
 .dir-concept{font-size:15px;color:var(--text2);line-height:1.75}
@@ -49,11 +43,15 @@ h2{font-family:var(--font-h);font-size:1.8rem;font-weight:600;letter-spacing:-.0
 .ref-type{font-family:var(--font-h);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
 .ref-why{margin-top:12px;padding-top:12px;border-top:1px solid var(--border);font-size:11px;color:var(--text3);line-height:1.5;font-style:italic}
 .sample-section{margin-bottom:48px}
-.sample-label{font-family:var(--font-h);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.sample-label{font-family:var(--font-h);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:20px;display:flex;align-items:center;gap:10px}
 .sample-label::before{content:'';width:24px;height:1px;background:var(--accent)}
-.video-wrap{border-radius:var(--r);overflow:hidden;border:1px solid var(--border);background:#000;max-width:800px}
-.video-wrap video{width:100%;display:block}
-.sample-note{font-size:11px;color:var(--text3);margin-top:8px;font-style:italic}
+.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.video-item{border-radius:var(--r);overflow:hidden;border:1px solid var(--border);background:#000;transition:border-color .3s}
+.video-item:hover{border-color:var(--accent)}
+.video-item video{width:100%;display:block}
+.video-caption{padding:12px 16px;font-size:12px;color:var(--text2);line-height:1.5;border-top:1px solid var(--border);background:var(--card)}
+.video-caption strong{color:var(--text);font-weight:600}
+.sample-note{font-size:11px;color:var(--text3);margin-top:16px;font-style:italic}
 .back-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-h);font-size:12px;font-weight:500;color:var(--text3);text-decoration:none;margin-bottom:32px;transition:color .3s}
 .back-link:hover{color:var(--accent)}
 .badge{display:inline-block;padding:3px 10px;border-radius:100px;font-family:var(--font-h);font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--accent);color:#000;margin-left:8px}
@@ -62,6 +60,7 @@ h2{font-family:var(--font-h);font-size:1.8rem;font-weight:600;letter-spacing:-.0
   h1{font-size:2rem}
   .dir-header{grid-template-columns:1fr}
   .ref-grid{grid-template-columns:1fr}
+  .video-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -69,220 +68,104 @@ h2{font-family:var(--font-h);font-size:1.8rem;font-weight:600;letter-spacing:-.0
 <button class="theme-toggle" onclick="toggleTheme()"><span class="ic-s">☀</span><span class="ic-m">●</span></button>
 <div class="container">
   <a href="index.html" class="back-link">← Volver al deck</a>
-  <div class="tag">Tratamientos visuales</div>
-  <h1>Tres direcciones<br>creativas.</h1>
-  <p class="subtitle">Cada tratamiento propone un tono visual y un lenguaje cinematográfico diferente para el mismo guion de 40 segundos.</p>
+  <div class="tag">Dirección creativa</div>
+  <h1>Escudo Invisible.</h1>
+  <p class="subtitle">La seguridad como capa operativa que ya funciona — solo hay que revelarla. Un tratamiento visual que combina elegancia, precisión y revelación progresiva.</p>
 
-  <div class="tabs">
-    <div class="tab active" onclick="switchTab(0)">⭐ Escudo Invisible</div>
-    <div class="tab" onclick="switchTab(1)">B · Sistema Conectado</div>
-    <div class="tab" onclick="switchTab(2)">C · Evolución</div>
-  </div>
-
-  <!-- ═══ A — ESCUDO INVISIBLE ═══ -->
-  <div class="panel active" id="panel-0">
-    <div class="dir-header">
-      <div>
-        <h2>Escudo Invisible<span class="badge">Recomendado</span></h2>
-        <p class="dir-concept">La seguridad como capa operativa que ya funciona — solo hay que revelarla. Espacios cotidianos donde progresivamente se descubre la malla de protección que Prosegur despliega.</p>
-        <div class="dir-keywords"><span>Serenidad</span><span>Precisión</span><span>Revelación</span><span>Control</span><span>Calma</span><span>Autoridad</span></div>
-      </div>
-      <div>
-        <div class="meta-box"><div class="meta-label">Tono visual</div><div class="meta-value">Elegante, sobrio, sofisticado. Revelación progresiva de lo invisible. Imágenes rápidas + voz en off. Sistemas limpios, señales sutiles.</div></div>
-        <div class="meta-box"><div class="meta-label">Paleta</div><div class="palette-row">
-          <span class="palette-dot" style="background:#1A1A1A"></span>
-          <span class="palette-dot" style="background:#2C3E50"></span>
-          <span class="palette-dot" style="background:#FFD102"></span>
-          <span class="palette-dot" style="background:#637A7C"></span>
-          <span class="palette-dot" style="background:#E8E8E4"></span>
-        </div></div>
-      </div>
+  <div class="dir-header">
+    <div>
+      <h2>Concepto<span class="badge">Recomendado</span></h2>
+      <p class="dir-concept">Espacios cotidianos donde progresivamente se descubre la malla de protección que Prosegur despliega. Sin alarma, sin drama — sofisticación pura. La cámara revela lo que siempre estuvo ahí.</p>
+      <div class="dir-keywords"><span>Serenidad</span><span>Precisión</span><span>Revelación</span><span>Control</span><span>Calma</span><span>Autoridad</span></div>
     </div>
-    <div class="ref-section">
-      <div class="ref-label">Referencias visuales</div>
-      <div class="ref-grid">
-        <div class="ref-card">
-          <div class="ref-type">Publicidad</div>
-          <h4>Apple — "Privacy"</h4>
-          <p>Protección invisible hecha visible. Estética limpia que parte de lo cotidiano y revela capas de seguridad que siempre estuvieron ahí. Sin alarma, sin drama — sofisticación pura.</p>
-          <div class="ref-why">→ Mismo concepto de "revelar lo invisible" que queremos para Prosegur.</div>
-        </div>
-        <div class="ref-card">
-          <div class="ref-type">Corporativo</div>
-          <h4>Palantir — Brand Videos</h4>
-          <p>Datos como capa sobre el mundo real. Sobriedad premium, operación estilizada. Visualizan sistemas complejos con elegancia cinematográfica sin caer en lo técnico.</p>
-          <div class="ref-why">→ Referencia de tono: cómo mostrar datos y operaciones sin parecer un dashboard.</div>
-        </div>
-        <div class="ref-card">
-          <div class="ref-type">Corporativo</div>
-          <h4>Siemens — "Ingenuity for Life"</h4>
-          <p>Tecnología que opera en silencio. Autoridad corporativa sin exageración ni épica. La cámara descubre, no fuerza. La sofisticación está en el ritmo, no en los efectos.</p>
-          <div class="ref-why">→ Referencia de ritmo: steadicam lento, reveals progresivos, autoridad sin gritar.</div>
-        </div>
-        <div class="ref-card">
-          <div class="ref-type">Cine</div>
-          <h4>Blade Runner 2049 — Cinematografía</h4>
-          <p>Roger Deakins. Atmósferas envolventes donde la luz revela el entorno. Cada frame comunica protección, control, calma. Paleta contenida con acentos dorados.</p>
-          <div class="ref-why">→ Referencia estética: la luz dorada sobre oscuro como lenguaje de "protección activa".</div>
-        </div>
-        <div class="ref-card">
-          <div class="ref-type">Motion</div>
-          <h4>Google DeepMind — Identity</h4>
-          <p>Visualización abstracta de inteligencia artificial con partículas y fluidos que forman patrones. Limpio, hipnótico, premium. Nunca muestra la tecnología literalmente.</p>
-          <div class="ref-why">→ Referencia para la "malla invisible": cómo visualizar IA sin pantallas ni código.</div>
-        </div>
-        <div class="ref-card">
-          <div class="ref-type">Corporativo</div>
-          <h4>Mastercard — "Priceless"</h4>
-          <p>Seguridad financiera invisible en cada transacción. El mensaje no es "estás protegido", sino que lo demuestras sin decirlo. La protección es el producto.</p>
-          <div class="ref-why">→ Referencia narrativa: la seguridad como algo que se siente, no que se explica.</div>
-        </div>
-      </div>
-    </div>
-    <div class="sample-section">
-      <div class="sample-label">Muestra IA</div>
-      <div class="video-wrap"><video controls muted loop playsinline><source src="muestra_escudo_digital.mp4" type="video/mp4"></video></div>
-      <p class="sample-note">Prueba de concepto — comparación visual de entornos con y sin capa de protección activa.</p>
+    <div>
+      <div class="meta-box"><div class="meta-label">Tono visual</div><div class="meta-value">Elegante, sobrio, sofisticado. Revelación progresiva de lo invisible. Imágenes rápidas + voz en off. Sistemas limpios, señales sutiles.</div></div>
+      <div class="meta-box"><div class="meta-label">Paleta</div><div class="palette-row">
+        <span class="palette-dot" style="background:#1A1A1A"></span>
+        <span class="palette-dot" style="background:#2C3E50"></span>
+        <span class="palette-dot" style="background:#FFD102"></span>
+        <span class="palette-dot" style="background:#637A7C"></span>
+        <span class="palette-dot" style="background:#E8E8E4"></span>
+      </div></div>
+      <div class="meta-box"><div class="meta-label">Técnica</div><div class="meta-value">Steadicam lento, reveals progresivos, transiciones orgánicas. La autoridad está en el ritmo, no en los efectos.</div></div>
     </div>
   </div>
 
-  <!-- ═══ B — SISTEMA CONECTADO ═══ -->
-  <div class="panel" id="panel-1">
-    <div class="dir-header">
-      <div>
-        <h2>Sistema Conectado</h2>
-        <p class="dir-concept">Ecosistema operativo conectado. Flujos de datos coordinados entre iSOC, drones, POPS y profesionales. Señal → detección → respuesta en tiempo real.</p>
-        <div class="dir-keywords"><span>Conectividad</span><span>Operaciones</span><span>Tiempo real</span><span>Coordinación</span><span>iSOC</span><span>Escala</span></div>
+  <div class="ref-section">
+    <div class="ref-label">Referencias visuales</div>
+    <div class="ref-grid">
+      <div class="ref-card">
+        <div class="ref-type">Publicidad</div>
+        <h4>Apple — "Privacy"</h4>
+        <p>Protección invisible hecha visible. Estética limpia que parte de lo cotidiano y revela capas de seguridad que siempre estuvieron ahí. Sin alarma, sin drama — sofisticación pura.</p>
+        <div class="ref-why">→ Mismo concepto de "revelar lo invisible" que queremos para Prosegur.</div>
       </div>
-      <div>
-        <div class="meta-box"><div class="meta-label">Tono visual</div><div class="meta-value">Cinematográfico, preciso, operativo. Cadena causal en acción. Más operación real que concept art.</div></div>
-        <div class="meta-box"><div class="meta-label">Paleta</div><div class="palette-row">
-          <span class="palette-dot" style="background:#000"></span>
-          <span class="palette-dot" style="background:#0D1B2A"></span>
-          <span class="palette-dot" style="background:#637A7C"></span>
-          <span class="palette-dot" style="background:#FFD102"></span>
-          <span class="palette-dot" style="background:#78CBCF"></span>
-        </div></div>
+      <div class="ref-card">
+        <div class="ref-type">Corporativo</div>
+        <h4>Palantir — Brand Videos</h4>
+        <p>Datos como capa sobre el mundo real. Sobriedad premium, operación estilizada. Visualizan sistemas complejos con elegancia cinematográfica sin caer en lo técnico.</p>
+        <div class="ref-why">→ Referencia de tono: cómo mostrar datos y operaciones sin parecer un dashboard.</div>
       </div>
-    </div>
-    <div class="ref-section">
-      <div class="ref-label">Referencias visuales</div>
-      <div class="ref-grid">
-        <div class="ref-card">
-          <div class="ref-type">Corporativo</div>
-          <h4>Accenture — Brand Films</h4>
-          <p>Operaciones globales coordinadas visualizadas con claridad. Datos en tiempo real, estética profesional que equilibra lo humano con lo tecnológico.</p>
-          <div class="ref-why">→ Referencia de escala: cómo mostrar una operación global sin perder claridad.</div>
-        </div>
-        <div class="ref-card">
-          <div class="ref-type">Data Viz</div>
-          <h4>MapBox / Kepler.gl</h4>
-          <p>Flujos de datos operativos con estética premium. Visualización geoespacial que convierte datos abstractos en geografía comprensible y bella.</p>
-          <div class="ref-why">→ Referencia técnica: cómo visualizar los flujos iSOC → terreno de forma atractiva.</div>
-        </div>
-        <div class="ref-card">
-          <div class="ref-type">Corporativo</div>
-          <h4>Prosegur — Seguridad Híbrida</h4>
-          <p>El lenguaje visual actual de Prosegur. Anclar al branding existente para que el salto creativo sea evolución, no ruptura. Respetar lo construido.</p>
-          <div class="ref-why">→ Base: todo lo que construyamos debe sentirse Prosegur desde el primer frame.</div>
-        </div>
-        <div class="ref-card">
-          <div class="ref-type">Corporativo</div>
-          <h4>CrowdStrike — "We Stop Breaches"</h4>
-          <p>Ciberseguridad contada como operación militar de precisión. Detección → alerta → respuesta en tiempo real. Montaje rápido, cadena causal clara.</p>
-          <div class="ref-why">→ Referencia de ritmo: montaje ágil que muestra la cadena señal → detección → acción.</div>
-        </div>
-        <div class="ref-card">
-          <div class="ref-type">Motion</div>
-          <h4>Bloomberg Terminal — UI/UX</h4>
-          <p>Interfaces operativas reales que son visualmente atractivas. La densidad de información como señal de capacidad, no de caos.</p>
-          <div class="ref-why">→ Referencia para pantallas iSOC: información densa = autoridad operativa.</div>
-        </div>
-        <div class="ref-card">
-          <div class="ref-type">Publicidad</div>
-          <h4>AWS — "What is Cloud?"</h4>
-          <p>Infraestructura invisible hecha comprensible. Conexiones globales visualizadas como red viva. Simplificación elegante de lo complejo.</p>
-          <div class="ref-why">→ Referencia narrativa: cómo explicar un ecosistema complejo en 40 segundos.</div>
-        </div>
+      <div class="ref-card">
+        <div class="ref-type">Corporativo</div>
+        <h4>Siemens — "Ingenuity for Life"</h4>
+        <p>Tecnología que opera en silencio. Autoridad corporativa sin exageración ni épica. La cámara descubre, no fuerza. La sofisticación está en el ritmo, no en los efectos.</p>
+        <div class="ref-why">→ Referencia de ritmo: steadicam lento, reveals progresivos, autoridad sin gritar.</div>
       </div>
-    </div>
-    <div class="sample-section">
-      <div class="sample-label">Muestra IA</div>
-      <div class="video-wrap"><video controls muted loop playsinline><source src="muestra_extra_03.mp4" type="video/mp4"></video></div>
-      <p class="sample-note">Prueba de concepto — centro de operaciones de seguridad (iSOC), coordinación en tiempo real.</p>
+      <div class="ref-card">
+        <div class="ref-type">Cine</div>
+        <h4>Blade Runner 2049 — Cinematografía</h4>
+        <p>Roger Deakins. Atmósferas envolventes donde la luz revela el entorno. Cada frame comunica protección, control, calma. Paleta contenida con acentos dorados.</p>
+        <div class="ref-why">→ Referencia estética: la luz dorada sobre oscuro como lenguaje de "protección activa".</div>
+      </div>
+      <div class="ref-card">
+        <div class="ref-type">Motion</div>
+        <h4>Google DeepMind — Identity</h4>
+        <p>Visualización abstracta de inteligencia artificial con partículas y fluidos que forman patrones. Limpio, hipnótico, premium. Nunca muestra la tecnología literalmente.</p>
+        <div class="ref-why">→ Referencia para la "malla invisible": cómo visualizar IA sin pantallas ni código.</div>
+      </div>
+      <div class="ref-card">
+        <div class="ref-type">Corporativo</div>
+        <h4>Mastercard — "Priceless"</h4>
+        <p>Seguridad financiera invisible en cada transacción. El mensaje no es "estás protegido", sino que lo demuestras sin decirlo. La protección es el producto.</p>
+        <div class="ref-why">→ Referencia narrativa: la seguridad como algo que se siente, no que se explica.</div>
+      </div>
     </div>
   </div>
 
-  <!-- ═══ C — EVOLUCIÓN ═══ -->
-  <div class="panel" id="panel-2">
-    <div class="dir-header">
-      <div>
-        <h2>Evolución</h2>
-        <p class="dir-concept">Narrativa temporal desde la seguridad tradicional hasta el modelo híbrido. De lo analógico y reactivo a lo digital y predictivo. Lo antiguo evoluciona.</p>
-        <div class="dir-keywords"><span>Transformación</span><span>Progreso</span><span>Antes/Ahora</span><span>Fusión</span><span>Metamorfosis</span></div>
+  <div class="sample-section">
+    <div class="sample-label">Muestras IA · Pruebas de concepto</div>
+    <div class="video-grid">
+      <div class="video-item">
+        <video controls muted loop playsinline preload="metadata">
+          <source src="https://res.cloudinary.com/dd6onz7yk/video/upload/v1771280483/Slow_steadicam_pushin_1080p_202602162312_cdlnlt.mp4" type="video/mp4">
+        </video>
+        <div class="video-caption"><strong>Steadicam push-in</strong> — Aproximación lenta revelando capas de protección en entorno corporativo. 1080p.</div>
       </div>
-      <div>
-        <div class="meta-box"><div class="meta-label">Tono visual</div><div class="meta-value">Narrativo, dramático, arco emocional. Empieza frío/estático, termina cálido/dinámico. Match cuts entre lo antiguo y lo moderno.</div></div>
-        <div class="meta-box"><div class="meta-label">Paleta</div><div class="palette-row">
-          <span class="palette-dot" style="background:#4A4A4A"></span>
-          <span class="palette-dot" style="background:#2C3E50"></span>
-          <span class="palette-dot" style="background:#FFD102"></span>
-          <span class="palette-dot" style="background:#F3813C"></span>
-          <span class="palette-dot" style="background:#62E0D0"></span>
-        </div></div>
+      <div class="video-item">
+        <video controls muted loop playsinline preload="metadata">
+          <source src="https://res.cloudinary.com/dd6onz7yk/video/upload/v1771278507/Slow_steadicam_pushin_202602162241_fgzo9o.mp4" type="video/mp4">
+        </video>
+        <div class="video-caption"><strong>Steadicam push-in</strong> — Variante de reveal progresivo, ritmo pausado con tensión controlada.</div>
       </div>
-    </div>
-    <div class="ref-section">
-      <div class="ref-label">Referencias visuales</div>
-      <div class="ref-grid">
-        <div class="ref-card">
-          <div class="ref-type">Brand</div>
-          <h4>IBM — "Let's Create"</h4>
-          <p>Evolución corporativa contada con elegancia. Match cuts entre lo antiguo y lo moderno. Tarjetas perforadas → cloud computing. El progreso como identidad de marca.</p>
-          <div class="ref-why">→ Referencia principal: la misma estructura narrativa antes/ahora que necesitamos.</div>
-        </div>
-        <div class="ref-card">
-          <div class="ref-type">Corporativo</div>
-          <h4>Siemens — "Ingenuity for Life"</h4>
-          <p>Transformación industrial contada con calma. De la fábrica a la industria 4.0. Ritmo pausado que deja respirar cada transición.</p>
-          <div class="ref-why">→ Referencia de tempo: cómo hacer que cada "match cut" tenga impacto emocional.</div>
-        </div>
-        <div class="ref-card">
-          <div class="ref-type">Corporativo</div>
-          <h4>Accenture — "New Applied Now"</h4>
-          <p>Progreso medible, escala global, autoridad tranquila. Muestra resultados, no promesas. El futuro como extensión natural del presente.</p>
-          <div class="ref-why">→ Referencia de cierre: cómo terminar con autoridad sin caer en la épica vacía.</div>
-        </div>
-        <div class="ref-card">
-          <div class="ref-type">Publicidad</div>
-          <h4>Nike — "Evolution of Speed"</h4>
-          <p>Progresión temporal acelerada. De lo rudimentario a lo perfecto. Cada frame es mejor que el anterior. El arco emocional es ascendente e imparable.</p>
-          <div class="ref-why">→ Referencia de energía: el feeling de "esto solo va a mejor" durante 40 segundos.</div>
-        </div>
-        <div class="ref-card">
-          <div class="ref-type">Documental</div>
-          <h4>National Geographic — Time Lapses</h4>
-          <p>El paso del tiempo como protagonista. Ciudades que crecen, tecnología que evoluciona. La compresión temporal como herramienta narrativa poderosa.</p>
-          <div class="ref-why">→ Referencia técnica: time-lapse y morphing como recurso para mostrar transformación.</div>
-        </div>
-        <div class="ref-card">
-          <div class="ref-type">Motion</div>
-          <h4>Volvo — "Made by Sweden"</h4>
-          <p>Tradición que evoluciona sin perder esencia. Lo mejor del pasado integrado en lo mejor del futuro. Orgullo de transformación, no de ruptura.</p>
-          <div class="ref-why">→ Referencia emocional: 12.000 empleados que han vivido la transformación — orgullo, no nostalgia.</div>
-        </div>
+      <div class="video-item">
+        <video controls muted loop playsinline preload="metadata">
+          <source src="https://res.cloudinary.com/dd6onz7yk/video/upload/v1771278510/Dronestyle_camera_descends_1080p_20260216224_bzbqc3.mp4" type="video/mp4">
+        </video>
+        <div class="video-caption"><strong>Drone descending</strong> — Perspectiva aérea descendente que revela la escala de la operación. 1080p.</div>
+      </div>
+      <div class="video-item">
+        <video controls muted loop playsinline preload="metadata">
+          <source src="https://res.cloudinary.com/dd6onz7yk/video/upload/v1771280485/Imgenes_del_mundo_1080p_202602162318_karxon.mp4" type="video/mp4">
+        </video>
+        <div class="video-caption"><strong>Imágenes del mundo</strong> — Presencia global, entornos protegidos en diferentes geografías. 1080p.</div>
       </div>
     </div>
-    <div class="sample-section">
-      <div class="sample-label">Muestra IA</div>
-      <div class="video-wrap"><video controls muted loop playsinline><source src="muestra_escudo_invisible.mp4" type="video/mp4"></video></div>
-      <p class="sample-note">Prueba de concepto — steadicam corporativo cinematográfico, base para la narrativa de transformación.</p>
-    </div>
+    <p class="sample-note">Pruebas de concepto generadas con IA — representan el tono y la dirección visual, no el resultado final de producción.</p>
   </div>
 </div>
 <script>
 function toggleTheme(){document.documentElement.setAttribute('data-theme',document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark')}
-function switchTab(i){document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('active',j===i));document.querySelectorAll('.panel').forEach((p,j)=>p.classList.toggle('active',j===i))}
 </script>
 </body>
 </html>
